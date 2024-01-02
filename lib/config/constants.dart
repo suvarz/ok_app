@@ -1,17 +1,12 @@
 class Constants {
-  static List<Map<String, String>> navBarLinks = [
+  static const List<Map<String, String>> navBarLinks = [
     {
       'title': 'Home',
       'url': '/',
       'icon': 'assets/icons/app_outline_home.svg',
     },
     {
-      'title': 'Red Murphy',
-      'url': '/',
-      'icon': 'assets/icons/app_book_icon.svg',
-    },
-    {
-      'title': 'Blue Murphy',
+      'title': 'Murphy',
       'url': '/',
       'icon': 'assets/icons/app_book_icon.svg',
     },
@@ -26,4 +21,9 @@ class Constants {
       'icon': 'assets/icons/app_outline_chrome_reader_mode.svg',
     },
   ];
+
+  static const assetImagesHomeBusinessmanKeynote =
+      'assets/images/home_businessman_keynote.svg';
+
+  static const boxBorderRadius = 20.0;
 }

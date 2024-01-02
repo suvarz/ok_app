@@ -39,6 +39,7 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // color: Colors.white,
       height: 75,
       decoration: BoxDecoration(
         color: ColorTheme.navBarBackground,
@@ -62,6 +63,7 @@ class _NavBarState extends State<NavBar> {
         unselectedItemColor: ColorTheme.reverseMainText,
         selectedFontSize: 12,
         unselectedFontSize: 12,
+        backgroundColor: Colors.transparent,
         onTap: _onTap,
       ),
     );
