@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ok_app/config/color_theme.dart';
+import 'package:ok_app/features/app/presentation/widgets/nav_bar.dart';
 import 'package:ok_app/features/home/presentation/widgets/home_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        // bottomNavigationBar: NavBar(),
+        bottomNavigationBar: const NavBar(),
       ),
     );
   }

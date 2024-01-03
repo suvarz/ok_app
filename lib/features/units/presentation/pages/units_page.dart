@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide AppBar;
 import 'package:ok_app/config/color_theme.dart';
 import 'package:ok_app/features/app/presentation/widgets/app_bar.dart';
+import 'package:ok_app/features/app/presentation/widgets/nav_bar.dart';
 import 'package:ok_app/features/units/presentation/widgets/units_item_widget.dart';
 
 class UnitsPage extends StatelessWidget {
@@ -21,19 +22,22 @@ class UnitsPage extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: CustomScrollView(
-          slivers: [
-            const AppBar(title: 'Ok App', imagePath: ''),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return UnitsItemWidget(index: index);
-                },
-                childCount: 30,
+        body: SafeArea(
+          child: CustomScrollView(
+            slivers: [
+              const AppBar(title: 'Ok App', imagePath: ''),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    return UnitsItemWidget(index: index);
+                  },
+                  childCount: 30,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
+        bottomNavigationBar: const NavBar(),
       ),
     );
   }

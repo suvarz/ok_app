@@ -9,12 +9,15 @@ class AppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+
       title: Text(title),
       backgroundColor: Colors.transparent,
+      surfaceTintColor: Colors.red,
+      // shadowColor: Colors.blue,
       expandedHeight: 200,
       centerTitle: true,
       floating: false,
-      pinned: true,
+      pinned: false,
       snap: false,
       elevation: 0,
     );

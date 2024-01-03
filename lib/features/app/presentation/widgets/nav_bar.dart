@@ -38,33 +38,36 @@ class _NavBarState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.white,
-      height: 75,
-      decoration: BoxDecoration(
-        color: ColorTheme.navBarBackground,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-            spreadRadius: 0,
-            blurRadius: 8,
-            offset: Offset(0, 0),
-          ),
-        ],
-      ),
-      child: BottomNavigationBar(
-        elevation: 0,
-        items: _items,
-        currentIndex: _currentIndex,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        selectedItemColor: ColorTheme.accent,
-        unselectedItemColor: ColorTheme.reverseMainText,
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
-        backgroundColor: Colors.transparent,
-        onTap: _onTap,
+    return ColoredBox(
+      color: Colors.white,
+      child: Container(
+        // color: Colors.white,
+        height: 75,
+        decoration: BoxDecoration(
+          color: ColorTheme.navBarBackground,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 0,
+              blurRadius: 8,
+              offset: Offset(0, 0),
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          elevation: 0,
+          items: _items,
+          currentIndex: _currentIndex,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          selectedItemColor: ColorTheme.accent,
+          unselectedItemColor: ColorTheme.reverseMainText,
+          selectedFontSize: 12,
+          unselectedFontSize: 12,
+          backgroundColor: Colors.transparent,
+          onTap: _onTap,
+        ),
       ),
     );
   }

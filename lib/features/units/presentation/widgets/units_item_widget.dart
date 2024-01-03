@@ -12,7 +12,7 @@ class UnitsItemWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border(
-          bottom: BorderSide(color: Colors.grey.withOpacity(0.1)),
+          bottom: BorderSide(color: ColorTheme.divider),
         ),
         borderRadius: index == 0
             ? const BorderRadius.vertical(
@@ -32,7 +32,7 @@ class UnitsItemWidget extends StatelessWidget {
                     width: 56,
                     height: 56,
                     decoration: BoxDecoration(
-                      color: ColorTheme.mainBarBackgroundFrom,
+                      color: ColorTheme.accent.withOpacity(0.5),
                       borderRadius: const BorderRadius.all(Radius.circular(28)),
                     ),
                   ),
@@ -48,7 +48,7 @@ class UnitsItemWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          index.toString(),
+                          (index + 1).toString(),
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -84,15 +84,33 @@ class UnitsItemWidget extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  Text('item $index'),
+                  Text(
+                    'Present - Настоящее',
+                    style: TextStyle(
+                      color: ColorTheme.subMainText,
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
           SizedBox(
-            width: 50,
-            child: Icon(Icons.arrow_forward_ios,
-                color: Colors.grey.withOpacity(0.3)),
+            width: 60,
+            child: Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(8)),
+                  color: ColorTheme.info,
+                ),
+                width: 25,
+                height: 25,
+                child: Icon(
+                  Icons.arrow_forward,
+                  color: ColorTheme.reverseMainText,
+                  size: 16,
+                ),
+              ),
+            ),
           ),
         ],
       ),
