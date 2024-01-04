@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ok_app/features/units/presentation/pages/units_page.dart';
+import 'package:ok_app/features/unit/presentation/pages/unit_lesson_page.dart';
 
 class OkApp extends StatelessWidget {
   const OkApp({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class OkApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const UnitsPage(),
+      home: const UnitLessonPage(headerHeight: 100),
     );
   }
 }

@@ -8,9 +8,9 @@ class ColorTheme {
   static Color accent = const Color(0xFFFF947F);
   static Color info = const Color(0xFF99C4EC);
 
+  static Color mainBackground = const Color(0xFFFFFFFF);
+  static Color darkBackground = const Color(0xFFD2CBF0);
   static Color navBarBackground = const Color(0xFF2C3446);
-  static Color mainBarBackgroundFrom = const Color(0xFFDBEAF5);
-  // static Color mainBarBackgroundFrom = const Color(0xFF2E3647);
-  static Color mainBarBackgroundTo = const Color(0xFFE8E5F6);
-  // static Color mainBarBackgroundTo = const Color(0xFF2E3647);
+  static Color mainBarBackgroundFrom = const Color(0xFFC9DEEB);
+  static Color mainBarBackgroundTo = const Color(0xFFE0DCF3);
 }

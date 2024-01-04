@@ -22,8 +22,7 @@ class Constants {
     },
   ];
 
-  static const assetImagesHomeBusinessmanKeynote =
-      'assets/images/home_businessman_keynote.svg';
+  static const imagesRedMurphyBook = 'assets/images/units_red_murphy_book.jpg';
 
   static const boxBorderRadius = 20.0;
 }
