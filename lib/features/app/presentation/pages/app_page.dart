@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:ok_app/config/color_theme.dart';
 
-class UnitPage extends StatelessWidget {
-  final double headerHeight;
+abstract class AppPage extends StatelessWidget {
   static const double headerTitleHeight = 40;
-  static const double tabBarHeight = 60;
+  static const double headerCardHeight = 150;
+  static const double headerTabBarHeight = 60;
+  static const double headerHeight =
+      headerTitleHeight + headerCardHeight + headerTabBarHeight;
 
-  const UnitPage({super.key, required this.headerHeight});
+  static const double headerTopPadding = 80;
+  static const double contentBorderRadius = 40;
+
+  final List<HeaderTabBarItemDto> _tabs;
+
+  const AppPage({
+    super.key,
+    required List<HeaderTabBarItemDto> tabs,
+  }) : _tabs = tabs;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +36,7 @@ class UnitPage extends StatelessWidget {
               ],
             ),
           ),
-          height: headerHeight + 80 + 40,
+          height: headerHeight + headerTopPadding + contentBorderRadius,
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
@@ -38,15 +48,16 @@ class UnitPage extends StatelessWidget {
                     height: headerTitleHeight,
                     title: 'Unit 10',
                   ),
-                  SizedBox(
-                    height: headerHeight - headerTitleHeight - tabBarHeight,
+                  Container(
+                    height: headerCardHeight,
+                    // color: Colors.red,
                   ),
-                  const HeaderTabBar(height: tabBarHeight),
+                  HeaderTabBarWidget(height: headerTabBarHeight, tabs: _tabs),
                   Container(
                     decoration: BoxDecoration(
                       color: ColorTheme.mainBackground,
                       borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(40),
+                        top: Radius.circular(contentBorderRadius),
                       ),
                       boxShadow: [
                         BoxShadow(
@@ -110,32 +121,54 @@ class HeaderTitleWidget extends StatelessWidget {
   }
 }
 
-class HeaderTabBar extends StatelessWidget {
-  final double height;
+class HeaderTabBarWidget extends StatelessWidget {
+  final List<HeaderTabBarItemDto> _tabs;
+  final double _height;
 
-  const HeaderTabBar({super.key, required this.height});
+  const HeaderTabBarWidget({
+    super.key,
+    required List<HeaderTabBarItemDto> tabs,
+    required double height,
+  })  : _height = height,
+        _tabs = tabs;
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> tabWidgets = [];
+    for (int i = 0; i < _tabs.length; i++) {
+      tabWidgets.add(
+        HeaderTabBarButtonWidget(height: _height, title: _tabs[i].title),
+      );
+      if (i < (_tabs.length - 1)) {
+        tabWidgets.add(const SizedBox(width: 10));
+      }
+    }
     return Row(
       children: [
         Expanded(child: Container()),
-        HeaderTabBarButtonWidget(title: 'Lesson', height: height),
-        const SizedBox(width: 10),
-        HeaderTabBarButtonWidget(title: 'Tests', height: height),
-        const SizedBox(width: 10),
-        HeaderTabBarButtonWidget(title: 'Audio', height: height),
+        ...tabWidgets,
         Expanded(child: Container()),
       ],
     );
   }
 }
 
+class HeaderTabBarItemDto {
+  final String action;
+  final String title;
+
+  const HeaderTabBarItemDto({
+    required this.action,
+    required this.title,
+  });
+}
+
 class HeaderTabBarButtonWidget extends StatelessWidget {
   final String title;
   final double height;
 
-  const HeaderTabBarButtonWidget({super.key, required this.height, required this.title});
+  const HeaderTabBarButtonWidget(
+      {super.key, required this.height, required this.title});
 
   @override
   Widget build(BuildContext context) {
