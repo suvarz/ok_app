@@ -3,14 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ok_app/config/color_theme.dart';
 import 'package:ok_app/config/constants.dart';
 
-class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+class AppNavBar extends StatefulWidget {
+  const AppNavBar({super.key});
 
   @override
-  State<NavBar> createState() => _NavBarState();
+  State<AppNavBar> createState() => _AppNavBarState();
 }
 
-class _NavBarState extends State<NavBar> {
+class _AppNavBarState extends State<AppNavBar> {
   int _currentIndex = 0;
   final List<BottomNavigationBarItem> _items = [];
 

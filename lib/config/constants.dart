@@ -1,12 +1,12 @@
 class Constants {
   static const List<Map<String, String>> navBarLinks = [
     {
-      'title': 'Home',
+      'title': 'Red Murphy',
       'url': '/',
-      'icon': 'assets/icons/app_outline_home.svg',
+      'icon': 'assets/icons/app_book_icon.svg',
     },
     {
-      'title': 'Murphy',
+      'title': 'Blue Murphy',
       'url': '/',
       'icon': 'assets/icons/app_book_icon.svg',
     },

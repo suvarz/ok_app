@@ -4,6 +4,7 @@ import 'package:ok_app/features/app_page/domain/entities/app_page_entity.dart';
 import 'package:ok_app/features/app_page/presentation/widgets/header_card_widget.dart';
 import 'package:ok_app/features/app_page/presentation/widgets/header_tab_bar_widget.dart';
 import 'package:ok_app/features/app_page/presentation/widgets/header_title_widget.dart';
+import 'package:ok_app/features/app_page/presentation/widgets/app_nav_bar.dart';
 
 class AppPage extends StatefulWidget {
   final AppPageEntity _appPageEntity;
@@ -101,6 +102,7 @@ class _AppPageState extends State<AppPage> {
               ),
             ),
           ),
+          bottomNavigationBar: const AppNavBar(),
         )
       ],
     );

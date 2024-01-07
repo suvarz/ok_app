@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart' hide AppBar;
 import 'package:ok_app/config/color_theme.dart';
-import 'package:ok_app/features/app/presentation/widgets/nav_bar.dart';
 import 'package:ok_app/features/units/presentation/widgets/units_item_widget.dart';
 
 class UnitsPage2 extends StatelessWidget {
@@ -99,7 +98,7 @@ class UnitsPage2 extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: const NavBar(),
+        // bottomNavigationBar: const NavBar(),
       ),
     );
   }
